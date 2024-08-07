@@ -12,6 +12,7 @@
     border: none;
     box-sizing: border-box;
     text-decoration: none;
+    list-style-type: none;
 }
 
 html {
@@ -51,27 +52,32 @@ body {
     height: 4rem;
 }
 
-.navbar .navbar-nav a {
-    margin: 0 1rem;
+.navbar .navbar-nav {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.navbar .navbar-nav li a {
+    /* margin: 0 1rem; */
     font-size: 1.1rem;
     display: inline-block;
     position: relative;
 }
 
-.navbar .navbar-nav a::after {
+.navbar .navbar-nav li a::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: -1rem;
+    bottom: -.5rem;
     left: 0;
     right: 0;
     /* padding-bottom: .5rem; */
     border-bottom: .1rem solid var(--mainColor);
-    transition: .2s linear;
     transform: scaleX(0);
+    transition: .2s linear;
 }
 
-.navbar .navbar-nav a:hover::after {
+.navbar .navbar-nav li a:hover::after {
     transform: scaleX(1);
 }
 
@@ -425,25 +431,24 @@ footer .row .footer-nav a {
 
     .navbar .navbar-nav {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         top: 100%;
         right: -100%;
         width: 45%;
         height: 100vh;
         background-color: #fff;
         transition: .5s ease;
+        padding: 1rem;
+
     }
 
     .navbar .navbar-nav.active {
         right: 0;
     }
 
-    .navbar .navbar-nav a {
-        display: flex;
-        flex-direction: column;
-        margin: 2.5rem .5rem 5.5rem;
-        padding: .5rem;
-        font-size: 2rem
-    }
+
 
     .hero .row .hero-img img {
         width: 22rem;
