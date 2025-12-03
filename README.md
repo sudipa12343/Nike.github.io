@@ -1,7 +1,7 @@
 Website Nike Sederhana
 
 
-Dibuat mengguanakan :
+Dibuat menggunakan :
 - HTML
 - CSS
 - JavaScript
